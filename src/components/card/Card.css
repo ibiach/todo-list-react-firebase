@@ -1,0 +1,128 @@
+.main-container {
+	max-width: 700px;
+	padding: 30px;
+	margin: auto;
+}
+
+/* CARDS */
+
+.cards {
+	width: 580px;
+	margin: auto;
+}
+
+.card {
+	background: radial-gradient(#1fe4f5, #4a90e2);
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	width: 500px;
+	min-height: 100px;
+	border-radius: 10px;
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+	transition: all 0.2s;
+}
+
+.card__controllers {
+	width: 120px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-complete {
+	position: relative;
+	background: radial-gradient(#1ff587, #48dbeb);
+	opacity: 60%;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	width: 500px;
+	min-height: 100px;
+	border-radius: 10px;
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+	transition: all 0.2s;
+}
+
+.card:hover {
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+	transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.card__link::after {
+	position: absolute;
+	top: 25px;
+	left: 0;
+	content: '';
+	width: 0%;
+	height: 3px;
+	background-color: rgba(255, 255, 255, 0.6);
+	transition: all 0.5s;
+}
+
+.card__link:hover::after {
+	width: 100%;
+}
+
+.card__exit {
+	justify-self: end;
+}
+
+.card__imgs {
+	display: flex;
+	justify-content: space-between;
+	width: 40px;
+}
+
+.card__img:hover {
+	cursor: pointer;
+}
+
+svg::hover {
+	fill: rgba(255, 255, 255, 0.696);
+}
+
+.card__complete {
+	position: absolute;
+	top: 18%;
+	left: 33%;
+}
+
+.card__title {
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.card__description {
+	font-weight: 400;
+	color: #ffffff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card__time {
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.time_complete {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+	.cards {
+		justify-content: center;
+	}
+}

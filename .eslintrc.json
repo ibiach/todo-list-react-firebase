@@ -1,0 +1,56 @@
+{
+	"env": {
+		"browser": true,
+		"es2022": true
+	},
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"ecmaVersion": 2022,
+		"requireConfigFile": false,
+		"sourceType": "module",
+		"babelOptions": {
+			"presets": ["@babel/preset-react"]
+		},
+		"ecmaFeatures": {
+			"jsx": true,
+			"modules": true
+		}
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"plugins": ["react", "prettier", "only-warn", "simple-import-sort"],
+	"extends": ["plugin:react/recommended", "plugin:prettier/recommended", "prettier"],
+	"rules": {
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
+		"prettier/prettier": ["error", { "singleQuote": true, "printWidth": 100, "semi": false }],
+		"react/display-name": 0,
+		"react/prop-types": 0,
+		"no-unused-vars": "off"
+	},
+	"overrides": [
+		// override "simple-import-sort" config
+		{
+			"files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+			"rules": {
+				"simple-import-sort/imports": [
+					"error",
+					{
+						"groups": [
+							["^react", "^@?\\w"],
+							[""],
+							["^(@|components)(/.*|$)"],
+							["^\\u0000"],
+							["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+							["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+							["^.+\\.?(css)$"]
+						]
+					}
+				]
+			}
+		}
+	]
+}
